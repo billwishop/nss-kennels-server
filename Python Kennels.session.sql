@@ -68,9 +68,13 @@ SELECT
             a.customer_id,
             l.name location_name,
             l.address location_address,
-            c.name customer_name
+            c.name customer_name,
+            c.address,
+            c.email,
+            c.password
         FROM Animal a 
         JOIN Location l 
             ON l.id = a.location_id
         JOIN Customer c
-            ON c.id = a.customer_id;
+            ON c.id = a.customer_id
+        WHERE a.id = 4
